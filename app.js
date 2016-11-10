@@ -12,7 +12,7 @@ app.use(function(req, res, next) {
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploadedimages/')
+    cb(null, 'images/')
   },
   filename: function (req, file, cb) {
     cb(null, (Math.random().toString(36)+'00000000000000000').slice(2, 10) + Date.now() + path.extname(file.originalname));
@@ -25,6 +25,7 @@ var upload = multer({ storage: storage })
 // "files" should be the same name as what's coming from the field name on the client side.
 app.post("/upload", upload.array("files", 12), function(req, res) {
     res.send(req.files);
+    // shows what's being passed in files
     console.log("files = ", req.files);
 });
 
