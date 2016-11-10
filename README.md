@@ -13,4 +13,4 @@ Run the follow commands:
 
 Open TCP port 3000 if necessary.
 
-Check out my ,a href="https://github.com/thomastthai/ionic-2-upload">ionic-2-upload</a> as a companion to this demo.
+Check out my <a href="https://github.com/thomastthai/ionic-2-upload">ionic-2-upload</a> as a companion to this demo.
