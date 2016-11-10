@@ -2,6 +2,7 @@ var express = require("express");
 var multer = require("multer");
 var app = express();
 var path = require("path");
+var uuid = require("uuid");
 
 // Allow cross origin resource sharing (CORS) within our application
 app.use(function(req, res, next) {
@@ -15,8 +16,7 @@ var storage = multer.diskStorage({
     cb(null, 'images/')
   },
   filename: function (req, file, cb) {
-    cb(null, (Math.random().toString(36)+'00000000000000000').slice(2, 10) + Date.now() + path.extname(file.originalname));
-
+    cb(null, uuid.v4() + path.extname(file.originalname));
   }
 })
 
